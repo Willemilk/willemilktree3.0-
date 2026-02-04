@@ -1,27 +1,44 @@
 'use client';
 
 export default function Stars() {
+  const items = [
+    { emoji: '⭐', top: '5%', left: '3%', size: '2rem', anim: 'spin-slow', dur: '3s', color: '#ff10f0' },
+    { emoji: '★', top: '12%', right: '8%', size: '1.8rem', anim: 'spin-slow', dur: '4s', color: '#00ffff' },
+    { emoji: '✨', bottom: '15%', left: '5%', size: '2.5rem', anim: 'float', dur: '3s', color: '#39ff14' },
+    { emoji: '♥', top: '25%', right: '3%', size: '1.5rem', anim: 'float', dur: '2.5s', color: '#ff0055' },
+    { emoji: '★', top: '45%', left: '2%', size: '1.8rem', anim: 'spin-slow', dur: '5s', color: '#ff10f0' },
+    { emoji: '✨', top: '30%', right: '5%', size: '2rem', anim: 'float', dur: '4s', color: '#00ffff' },
+    { emoji: '♥', bottom: '30%', right: '4%', size: '1.3rem', anim: 'float-reverse', dur: '3.5s', color: '#ff10f0' },
+    { emoji: '⭐', bottom: '5%', right: '12%', size: '2rem', anim: 'spin-slow', dur: '6s', color: '#fff700' },
+    { emoji: '☆', top: '60%', left: '4%', size: '1.6rem', anim: 'float', dur: '4.5s', color: '#39ff14' },
+    { emoji: '♪', top: '70%', right: '6%', size: '1.5rem', anim: 'float-reverse', dur: '3s', color: '#ff6600' },
+    { emoji: '💀', top: '80%', left: '7%', size: '1.4rem', anim: 'spin-slow', dur: '7s', color: '#00ffff' },
+    { emoji: 'X_X', top: '15%', left: '12%', size: '0.8rem', anim: 'float', dur: '5s', color: '#ff10f0' },
+    { emoji: ':3', bottom: '25%', left: '3%', size: '0.8rem', anim: 'float-reverse', dur: '4s', color: '#39ff14' },
+    { emoji: '♡', top: '50%', right: '2%', size: '1.8rem', anim: 'float', dur: '3.5s', color: '#ff0055' },
+  ];
+
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {/* Star decorations */}
-      <div className="absolute top-10 left-10 text-4xl animate-[spin-slow_3s_linear_infinite] text-[#ff10f0]">
-        ⭐
-      </div>
-      <div className="absolute top-20 right-20 text-3xl animate-[spin-slow_4s_linear_infinite] text-[#00ffff]">
-        ★
-      </div>
-      <div className="absolute bottom-20 left-20 text-5xl animate-[float_3s_ease-in-out_infinite] text-[#00ff00]">
-        ✨
-      </div>
-      <div className="absolute bottom-10 right-10 text-4xl animate-[float_2s_ease-in-out_infinite] text-[#ff0055]">
-        ⭐
-      </div>
-      <div className="absolute top-1/2 left-5 text-3xl animate-[spin-slow_5s_linear_infinite] text-[#ff10f0]">
-        ★
-      </div>
-      <div className="absolute top-1/3 right-10 text-4xl animate-[float_4s_ease-in-out_infinite] text-[#00ffff]">
-        ✨
-      </div>
+      {items.map((item, i) => (
+        <div
+          key={i}
+          className="absolute"
+          style={{
+            top: item.top,
+            left: item.left,
+            right: item.right,
+            bottom: item.bottom,
+            fontSize: item.size,
+            color: item.color,
+            animation: `${item.anim} ${item.dur} ease-in-out infinite`,
+            animationDelay: `${i * 0.3}s`,
+            opacity: 0.7,
+          }}
+        >
+          {item.emoji}
+        </div>
+      ))}
     </div>
   );
 }
