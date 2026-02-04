@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nchore: add project config\n\nMode: yolo\nDepth: standard\nParallelization: enabled\nWorkflow agents: research=on, plan_check=on, verifier=on\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
