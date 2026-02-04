@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&display=swap');
+
 :root {
   --neon-pink: #ff10f0;
   --neon-cyan: #00ffff;
-  --neon-lime: #00ff00;
+  --neon-lime: #39ff14;
   --neon-red: #ff0055;
-  --bg-black: #000000;
+  --neon-yellow: #fff700;
+  --neon-orange: #ff6600;
+  --bg-black: #0a0a0a;
 }
 
 @theme inline {
@@ -21,54 +25,272 @@
 
 body {
   background: var(--bg-black);
-  color: var(--neon-cyan);
-  font-family: 'Comic Sans MS', 'Arial', sans-serif;
+  color: #fff;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', cursive, sans-serif;
   overflow-x: hidden;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size: 20px;"><text y="20">✨</text></svg>'), auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="font-size:28px"><text y="28">✨</text></svg>') 16 16, auto;
 }
 
-/* Rainbow gradient animation */
+/* ===== KEYFRAMES ===== */
+
 @keyframes rainbow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Floating animation */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
-/* Pulse glow animation */
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+}
+
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px var(--neon-pink); }
-  50% { box-shadow: 0 0 40px var(--neon-pink), 0 0 60px var(--neon-cyan); }
+  0%, 100% { filter: drop-shadow(0 0 8px var(--neon-pink)); }
+  50% { filter: drop-shadow(0 0 25px var(--neon-cyan)) drop-shadow(0 0 50px var(--neon-pink)); }
 }
 
-/* Spin animation */
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* Glitter sparkle */
 @keyframes sparkle {
-  0%, 100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1); }
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
 }
 
-/* Prefers reduced motion */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(-0.5deg); }
+  75% { transform: rotate(0.5deg); }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-skew {
+  0%, 100% { transform: skew(0deg); }
+  20% { transform: skew(-2deg); }
+  40% { transform: skew(3deg); }
+  60% { transform: skew(-1deg); }
+  80% { transform: skew(2deg); }
+}
+
+@keyframes border-dance {
+  0% { border-color: var(--neon-pink); }
+  25% { border-color: var(--neon-cyan); }
+  50% { border-color: var(--neon-lime); }
+  75% { border-color: var(--neon-yellow); }
+  100% { border-color: var(--neon-pink); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-4px) rotate(-1deg); }
+  20% { transform: translateX(4px) rotate(1deg); }
+  30% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  50% { transform: translateX(-2px) rotate(-0.5deg); }
+  60% { transform: translateX(2px) rotate(0.5deg); }
+  70% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  90% { transform: translateX(-1px); }
+}
+
+@keyframes color-cycle {
+  0% { color: var(--neon-pink); }
+  20% { color: var(--neon-cyan); }
+  40% { color: var(--neon-lime); }
+  60% { color: var(--neon-yellow); }
+  80% { color: var(--neon-orange); }
+  100% { color: var(--neon-pink); }
+}
+
+@keyframes bg-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+@keyframes tilt-card {
+  0%, 100% { transform: perspective(500px) rotateY(0deg) rotateX(0deg); }
+  25% { transform: perspective(500px) rotateY(2deg) rotateX(-1deg); }
+  75% { transform: perspective(500px) rotateY(-2deg) rotateX(1deg); }
+}
+
+/* ===== CRT / SCANLINE OVERLAY ===== */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.crt-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 255, 255, 0.03) 0%,
+    transparent 50%,
+    rgba(255, 16, 240, 0.03) 100%
+  );
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+/* ===== RAINBOW TEXT ===== */
+.rainbow-text {
+  background: linear-gradient(90deg,
+    var(--neon-pink), var(--neon-cyan), var(--neon-lime),
+    var(--neon-yellow), var(--neon-orange), var(--neon-red), var(--neon-pink));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s ease infinite;
+}
+
+/* ===== GLITCH TEXT ===== */
+.glitch-text {
+  position: relative;
+}
+.glitch-text:hover {
+  animation: glitch 0.3s ease infinite;
+}
+
+/* ===== NEON BOX ===== */
+.neon-box {
+  border: 2px solid var(--neon-cyan);
+  animation: border-dance 3s linear infinite;
+  transition: all 0.3s ease;
+}
+.neon-box:hover {
+  box-shadow:
+    0 0 10px var(--neon-pink),
+    0 0 30px var(--neon-pink),
+    0 0 60px var(--neon-cyan),
+    inset 0 0 20px rgba(255, 16, 240, 0.1);
+  transform: scale(1.03);
+}
+
+/* ===== WIGGLE ===== */
+.wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+/* ===== MARQUEE ===== */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+/* ===== CHECKERBOARD BG ===== */
+.checker-bg {
+  background-image:
+    linear-gradient(45deg, rgba(255, 16, 240, 0.06) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 16, 240, 0.06) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 16, 240, 0.06) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 16, 240, 0.06) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  animation: bg-scroll 4s linear infinite;
+}
+
+/* ===== 3D TILT CARD ===== */
+.tilt-card {
+  transition: all 0.3s ease;
+}
+.tilt-card:hover {
+  transform: perspective(600px) rotateY(5deg) rotateX(-3deg) scale(1.05);
+  box-shadow:
+    -5px 5px 20px rgba(255, 16, 240, 0.4),
+    5px -5px 20px rgba(0, 255, 255, 0.4);
+}
+
+/* ===== BLINK ===== */
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ===== DASHED ANIMATED BORDER ===== */
+.dashed-border {
+  border: 3px dashed var(--neon-pink);
+  animation: border-dance 2s linear infinite;
+}
+
+/* ===== IMPACT FONT ===== */
+.impact-font {
+  font-family: 'Bangers', Impact, sans-serif;
+  letter-spacing: 2px;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', monospace;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+  border-left: 2px solid var(--neon-pink);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--neon-pink), var(--neon-cyan));
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--neon-cyan), var(--neon-lime));
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--neon-pink);
+  color: #000;
+}
+
+/* ===== Prefers reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  body {
-    cursor: auto;
-  }
+  body { cursor: auto; }
+  .crt-overlay, .crt-overlay::after { display: none; }
 }
