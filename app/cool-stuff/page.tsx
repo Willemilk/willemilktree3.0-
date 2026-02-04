@@ -83,15 +83,15 @@ const completions = [
 
 export default function CoolStuff() {
   return (
-    <div className="min-h-screen p-4 md:p-8 checker-bg">
-      <main className="max-w-5xl mx-auto">
+    <div className="min-h-screen flex flex-col items-center p-4 md:p-8 checker-bg">
+      <main className="w-full max-w-4xl flex flex-col items-center">
         {/* Navigation */}
         <nav className="flex gap-4 justify-center mb-8 flex-wrap">
           <a href="/" className="px-6 py-3 rounded-lg neon-box text-[#00ffff] font-bold impact-font hover:bg-[#00ffff] hover:text-black transition-all">
-            ← Home
+            Home
           </a>
           <a href="/about" className="px-6 py-3 rounded-lg neon-box text-[#ff10f0] font-bold impact-font hover:bg-[#ff10f0] hover:text-black transition-all">
-            About ★
+            About
           </a>
         </nav>
 
@@ -101,7 +101,7 @@ export default function CoolStuff() {
             Cool Stuff / Achievements
           </h1>
           <p className="text-lg text-[#00ffff] wiggle">
-            Here is a list of cool things I've achieved over the years.
+            Here is a list of cool things I&apos;ve achieved over the years.
           </p>
           <p className="pixel-font text-[10px] text-[#ff10f0] mt-2 blink">
             I AM STILL WORKING ON THIS PAGE
@@ -109,48 +109,43 @@ export default function CoolStuff() {
         </div>
 
         {/* Achievements Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12 w-full">
           {achievements.map((achievement, i) => (
             <div
               key={achievement.title}
-              className="tilt-card neon-box rounded-lg p-5 bg-black/50 backdrop-blur-sm group"
+              className="tilt-card neon-box rounded-lg p-5 bg-black/50 backdrop-blur-sm group text-center"
               style={{
                 borderColor: achievement.color,
               }}
             >
-              {/* Icon badge */}
-              <div className="flex items-start gap-3 mb-3">
-                <div
-                  className="text-4xl animate-[float_3s_ease-in-out_infinite] group-hover:animate-[shake_0.5s_ease-in-out]"
-                  style={{ animationDelay: `${i * 0.3}s` }}
-                >
-                  {achievement.icon}
-                </div>
-                <h3
-                  className="text-lg font-bold impact-font leading-tight"
-                  style={{ color: achievement.color }}
-                >
-                  {achievement.title}
-                </h3>
+              {/* Icon */}
+              <div
+                className="text-5xl mb-3 animate-[float_3s_ease-in-out_infinite] group-hover:animate-[shake_0.5s_ease-in-out] inline-block"
+                style={{ animationDelay: `${i * 0.3}s` }}
+              >
+                {achievement.icon}
               </div>
+              <h3
+                className="text-lg font-bold impact-font leading-tight mb-2"
+                style={{ color: achievement.color }}
+              >
+                {achievement.title}
+              </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
                 {achievement.desc}
               </p>
-              {/* Decorative corner */}
-              <div className="flex justify-end mt-3">
-                <span className="text-xs animate-[color-cycle_3s_linear_infinite]">★ ★ ★</span>
-              </div>
             </div>
           ))}
         </div>
 
         {/* 100% Completions Section */}
-        <section className="neon-box rounded-lg p-6 md:p-8 bg-black/50 backdrop-blur-sm mb-8">
-          <h2 className="text-3xl impact-font text-[#39ff14] mb-2 glitch-text flex items-center gap-3">
+        <section className="neon-box rounded-lg p-6 md:p-8 bg-black/50 backdrop-blur-sm mb-8 w-full">
+          <h2 className="text-3xl impact-font text-[#39ff14] mb-2 glitch-text flex items-center justify-center gap-3">
             <span className="animate-[spin-slow_3s_linear_infinite] text-2xl">🏆</span>
             100% Completions
+            <span className="animate-[spin-slow_3s_linear_infinite_reverse] text-2xl">🏆</span>
           </h2>
-          <p className="text-sm text-gray-400 mb-6">
+          <p className="text-sm text-gray-400 mb-6 text-center">
             100% some games over various consoles
           </p>
 
@@ -161,7 +156,7 @@ export default function CoolStuff() {
                 className="flex items-center gap-2 py-2 px-3 rounded hover:bg-white/5 transition-colors group"
               >
                 <span
-                  className="text-sm group-hover:animate-[spin-slow_0.5s_linear]"
+                  className="text-sm group-hover:animate-[spin-slow_0.5s_linear] flex-shrink-0"
                   style={{ color: ['#ff10f0', '#00ffff', '#39ff14', '#fff700', '#ff6600', '#ff0055'][i % 6] }}
                 >
                   ✓
@@ -173,21 +168,18 @@ export default function CoolStuff() {
             ))}
           </div>
 
-          <p className="text-xs text-gray-500 mt-6 italic dashed-border rounded p-3">
+          <p className="text-xs text-gray-500 mt-6 italic dashed-border rounded p-3 text-center">
             Note: I have played and finished way more games than this list. These are just the ones I 100%ed (that I remember).
           </p>
         </section>
 
         {/* Footer */}
-        <div className="text-center py-6">
-          <div className="flex items-center justify-center gap-2 text-xl mb-4">
-            <span className="text-[#ff10f0]">♥</span>
-            <span className="text-[#00ffff]">X_X</span>
-            <span className="text-[#39ff14]">♥</span>
+        <div className="py-6">
+          <div className="flex items-center justify-center gap-3 text-xl animate-[pulse-glow_3s_ease-in-out_infinite]">
+            <span className="text-[#ff10f0] animate-[float_2s_ease-in-out_infinite]">♥</span>
+            <span className="text-[#00ffff] animate-[spin-slow_4s_linear_infinite]">✦</span>
+            <span className="text-[#39ff14] animate-[float-reverse_2.5s_ease-in-out_infinite]">♥</span>
           </div>
-          <p className="pixel-font text-[8px] text-gray-600">
-            more achievements loading... eventually...
-          </p>
         </div>
       </main>
     </div>
