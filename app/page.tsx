@@ -58,57 +58,50 @@ const socialLinks = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen p-4 md:p-8 checker-bg">
-      <main className="max-w-4xl mx-auto">
-        {/* Welcome banner */}
-        <div className="text-center mb-4">
-          <p className="pixel-font text-[10px] md:text-xs text-[#39ff14] animate-[color-cycle_4s_linear_infinite]">
-            ★ ★ ★ welcome 2 my profile!!! ★ ★ ★
-          </p>
-        </div>
-
+    <div className="min-h-screen flex flex-col items-center justify-start p-4 md:p-8 checker-bg">
+      <main className="w-full max-w-3xl flex flex-col items-center">
         {/* Big header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 mt-6">
           <h1 className="text-5xl md:text-7xl lg:text-8xl impact-font rainbow-text mb-4 glitch-text">
-            Hey, I'm Willem
+            Hey, I&apos;m Willem
           </h1>
           <p className="text-lg md:text-xl text-[#00ffff] wiggle max-w-lg mx-auto">
             this is my linktree about me erm idunno tbh but just take a look
           </p>
 
-          {/* Decorative scene kid divider */}
-          <div className="my-6 flex items-center justify-center gap-2 text-2xl animate-[pulse-glow_2s_ease-in-out_infinite]">
-            <span className="animate-[spin-slow_3s_linear_infinite]">★</span>
+          {/* Decorative divider */}
+          <div className="my-6 flex items-center justify-center gap-3 text-2xl animate-[pulse-glow_2s_ease-in-out_infinite]">
+            <span className="animate-[spin-slow_3s_linear_infinite] text-[#fff700]">★</span>
             <span className="text-[#ff10f0]">♥</span>
-            <span className="text-[#00ffff]">X_X</span>
+            <span className="text-[#00ffff] text-lg">✦</span>
             <span className="text-[#39ff14]">♥</span>
-            <span className="animate-[spin-slow_3s_linear_infinite_reverse]">★</span>
+            <span className="animate-[spin-slow_3s_linear_infinite_reverse] text-[#fff700]">★</span>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex gap-4 justify-center mb-12 flex-wrap">
+        <nav className="flex gap-4 justify-center mb-10 flex-wrap">
           <a
             href="/about"
             className="px-8 py-4 rounded-lg neon-box text-[#ff10f0] font-bold text-lg impact-font tracking-wider hover:bg-[#ff10f0] hover:text-black transition-all glitch-text"
           >
-            ★ About ★
+            About
           </a>
           <a
             href="/cool-stuff"
             className="px-8 py-4 rounded-lg neon-box text-[#00ffff] font-bold text-lg impact-font tracking-wider hover:bg-[#00ffff] hover:text-black transition-all glitch-text"
           >
-            ★ Cool Stuff ★
+            Cool Stuff
           </a>
         </nav>
 
         {/* Now Playing widget */}
-        <div className="mb-10 animate-[float_4s_ease-in-out_infinite]">
+        <div className="mb-10 animate-[float_4s_ease-in-out_infinite] w-full flex justify-center">
           <NowPlaying />
         </div>
 
         {/* Social Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 w-full">
           {socialLinks.map((link, i) => (
             <a
               key={link.name}
@@ -121,7 +114,7 @@ export default function Home() {
                 borderColor: link.accent,
               }}
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-4">
                 <div
                   className="flex-shrink-0 text-3xl group-hover:animate-[shake_0.5s_ease-in-out]"
                   style={{ color: link.accent }}
@@ -139,7 +132,7 @@ export default function Home() {
                     {link.description}
                   </p>
                 </div>
-                <span className="text-xl opacity-0 group-hover:opacity-100 transition-opacity animate-[float_1s_ease-in-out_infinite]">
+                <span className="text-xl opacity-0 group-hover:opacity-100 transition-opacity animate-[float_1s_ease-in-out_infinite]" style={{ color: link.accent }}>
                   →
                 </span>
               </div>
@@ -148,18 +141,17 @@ export default function Home() {
         </div>
 
         {/* Visitor Counter */}
-        <div className="text-center mb-8">
+        <div className="mb-8">
           <VisitorCounter />
         </div>
 
-        {/* Footer decorations */}
-        <div className="text-center text-xs pixel-font text-[#ff10f0] py-6 space-y-2">
-          <p className="animate-[color-cycle_5s_linear_infinite]">
-            ♥ made with mass brainrot and zero sleep ♥
-          </p>
-          <p className="text-[8px] text-gray-600">
-            &copy; 2025 willemilk — if ur reading this ur cool
-          </p>
+        {/* Footer */}
+        <div className="py-6">
+          <div className="flex items-center justify-center gap-3 text-xl animate-[pulse-glow_3s_ease-in-out_infinite]">
+            <span className="text-[#ff10f0] animate-[float_2s_ease-in-out_infinite]">♥</span>
+            <span className="text-[#00ffff] animate-[spin-slow_4s_linear_infinite]">✦</span>
+            <span className="text-[#39ff14] animate-[float-reverse_2.5s_ease-in-out_infinite]">♥</span>
+          </div>
         </div>
       </main>
     </div>
