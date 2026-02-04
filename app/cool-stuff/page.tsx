@@ -1,46 +1,193 @@
+const achievements = [
+  {
+    title: '4 Extreme demons + stats',
+    desc: 'Geometry Dash accomplishments with full stats.',
+    icon: '👹',
+    color: '#ff0055',
+  },
+  {
+    title: 'Fortnite Freebuilds',
+    desc: 'I am almost "Ashamed" of being able to freebuild in fortnite because the competitive community is so corny but here it is',
+    icon: '🏗️',
+    color: '#00ffff',
+  },
+  {
+    title: 'Beat Terraria Calamity on Master mode Infernum',
+    desc: 'Beaten calamity infernum on a master mode patch (normally you can only play expert mode on infernum)',
+    icon: '🔥',
+    color: '#ff6600',
+  },
+  {
+    title: 'Jevil / Spamton NEO at 2× speed',
+    desc: 'Used cheat engine to make the game go at 2x speed and beat Jevil and spamton neo that way (Jevil was significantly more difficult)',
+    icon: '🃏',
+    color: '#ff10f0',
+  },
+  {
+    title: 'Celeste — every C-Side golden',
+    desc: 'Collected the golden strawberries on all C-Sides.',
+    icon: '🍓',
+    color: '#ff0055',
+  },
+  {
+    title: 'Splatoon 1 speedrun — 38 minutes',
+    desc: 'Any% route PB at 38:xx.',
+    icon: '🦑',
+    color: '#39ff14',
+  },
+  {
+    title: 'Pokémon GO — rare finds / stats',
+    desc: 'Highlight catches and profile stats.',
+    icon: '⚡',
+    color: '#fff700',
+  },
+  {
+    title: 'Sans — no hit',
+    desc: 'Undertale Genocide Sans fight taken with zero hits.',
+    icon: '💀',
+    color: '#00ffff',
+  },
+  {
+    title: 'Still thinking...',
+    desc: 'Another showcase slot is commmiinnnggg',
+    icon: '🤔',
+    color: '#ff10f0',
+  },
+];
+
+const completions = [
+  'Terraria — all achievements (Steam)',
+  'Celeste — all achievements (Steam)',
+  'Geometry Dash — all achievements (Steam)',
+  'Metroid AM2R — 100% (PC, fan-made)',
+  'Super Mario Odyssey — 999 stars (Nintendo Switch)',
+  'Metroid Dread — 100% on hard and normal (Nintendo Switch)',
+  'The Legend of Zelda: Breath of the Wild — 100% including all Korok seeds (Nintendo Switch)',
+  'Splatoon 2 — Story Mode & Octo Expansion 100% (Nintendo Switch)',
+  'Splatoon 3 — Story Mode & Side Order 100% (Nintendo Switch)',
+  'Rayman Legends — 100% (Wii U)',
+  'LEGO City Undercover — 100% (Wii U)',
+  'Super Mario 3D World — 100% (twice)',
+  'New Super Mario Bros. U — 100%',
+  'New Super Luigi U — 100%',
+  'Rayman Origins — 100% (Wii)',
+  'Super Mario Galaxy — 121 stars (Wii)',
+  'Super Mario Galaxy 2 — 242 stars (Wii)',
+  'Metroid Fusion — 100% (Game Boy Advance)',
+  'Metroid: Zero Mission — 100% (Game Boy Advance)',
+  'Super Mario World — 100% (SNES)',
+  'Super Metroid — 100% (SNES)',
+  'The Legend of Zelda: A Link to the Past — 100% (SNES)',
+  'The Legend of Zelda — 100% (NES)',
+];
+
 export default function CoolStuff() {
   return (
-    <div className="min-h-screen p-8">
-      <main className="max-w-4xl mx-auto">
+    <div className="min-h-screen p-4 md:p-8 checker-bg">
+      <main className="max-w-5xl mx-auto">
         {/* Navigation */}
-        <nav className="flex gap-4 justify-center mb-12">
-          <a href="/" className="px-6 py-3 rounded-lg border-2 border-[#00ff00] text-[#00ff00] hover:bg-[#00ff00] hover:text-black transition-all">
-            Home
+        <nav className="flex gap-4 justify-center mb-8 flex-wrap">
+          <a href="/" className="px-6 py-3 rounded-lg neon-box text-[#00ffff] font-bold impact-font hover:bg-[#00ffff] hover:text-black transition-all">
+            ← Home
           </a>
-          <a href="/about" className="px-6 py-3 rounded-lg border-2 border-[#ff0055] text-[#ff0055] hover:bg-[#ff0055] hover:text-black transition-all">
-            About
+          <a href="/about" className="px-6 py-3 rounded-lg neon-box text-[#ff10f0] font-bold impact-font hover:bg-[#ff10f0] hover:text-black transition-all">
+            About ★
           </a>
         </nav>
 
-        {/* Cool Stuff Content */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-8 bg-gradient-to-r from-[#00ff00] via-[#ff0055] to-[#00ffff] bg-clip-text text-transparent">
-            Cool Stuff
+        {/* Title */}
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-6xl impact-font rainbow-text mb-4 glitch-text">
+            Cool Stuff / Achievements
           </h1>
+          <p className="text-lg text-[#00ffff] wiggle">
+            Here is a list of cool things I've achieved over the years.
+          </p>
+          <p className="pixel-font text-[10px] text-[#ff10f0] mt-2 blink">
+            I AM STILL WORKING ON THIS PAGE
+          </p>
         </div>
 
-        <div className="space-y-8">
-          <section className="p-6 border-2 border-[#00ff00] rounded-lg hover:shadow-[0_0_20px_rgba(0,255,0,0.5)] transition-all hover:scale-105">
-            <h2 className="text-3xl font-bold mb-4 text-[#00ff00]">My Projects ✨</h2>
-            <p className="text-lg mb-4 text-[#00ffff]">
-              Check out my GitHub for my projects! Most of my repos are private since they're school stuff, but you can see what I'm working on.
-            </p>
-            <a
-              href="https://github.com/Willemilk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl underline text-[#ff10f0] hover:text-[#00ffff] transition-colors"
+        {/* Achievements Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {achievements.map((achievement, i) => (
+            <div
+              key={achievement.title}
+              className="tilt-card neon-box rounded-lg p-5 bg-black/50 backdrop-blur-sm group"
+              style={{
+                borderColor: achievement.color,
+              }}
             >
-              → Visit my GitHub ★
-            </a>
-          </section>
+              {/* Icon badge */}
+              <div className="flex items-start gap-3 mb-3">
+                <div
+                  className="text-4xl animate-[float_3s_ease-in-out_infinite] group-hover:animate-[shake_0.5s_ease-in-out]"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                >
+                  {achievement.icon}
+                </div>
+                <h3
+                  className="text-lg font-bold impact-font leading-tight"
+                  style={{ color: achievement.color }}
+                >
+                  {achievement.title}
+                </h3>
+              </div>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                {achievement.desc}
+              </p>
+              {/* Decorative corner */}
+              <div className="flex justify-end mt-3">
+                <span className="text-xs animate-[color-cycle_3s_linear_infinite]">★ ★ ★</span>
+              </div>
+            </div>
+          ))}
+        </div>
 
-          <section className="p-6 border-2 border-[#ff0055] rounded-lg hover:shadow-[0_0_20px_rgba(255,0,85,0.5)] transition-all">
-            <h2 className="text-3xl font-bold mb-4 text-[#ff0055]">More coming soon... 🚀</h2>
-            <p className="text-lg text-[#00ffff]">
-              I'll add more cool stuff here as I build it! ⭐
-            </p>
-          </section>
+        {/* 100% Completions Section */}
+        <section className="neon-box rounded-lg p-6 md:p-8 bg-black/50 backdrop-blur-sm mb-8">
+          <h2 className="text-3xl impact-font text-[#39ff14] mb-2 glitch-text flex items-center gap-3">
+            <span className="animate-[spin-slow_3s_linear_infinite] text-2xl">🏆</span>
+            100% Completions
+          </h2>
+          <p className="text-sm text-gray-400 mb-6">
+            100% some games over various consoles
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {completions.map((game, i) => (
+              <div
+                key={game}
+                className="flex items-center gap-2 py-2 px-3 rounded hover:bg-white/5 transition-colors group"
+              >
+                <span
+                  className="text-sm group-hover:animate-[spin-slow_0.5s_linear]"
+                  style={{ color: ['#ff10f0', '#00ffff', '#39ff14', '#fff700', '#ff6600', '#ff0055'][i % 6] }}
+                >
+                  ✓
+                </span>
+                <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                  {game}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs text-gray-500 mt-6 italic dashed-border rounded p-3">
+            Note: I have played and finished way more games than this list. These are just the ones I 100%ed (that I remember).
+          </p>
+        </section>
+
+        {/* Footer */}
+        <div className="text-center py-6">
+          <div className="flex items-center justify-center gap-2 text-xl mb-4">
+            <span className="text-[#ff10f0]">♥</span>
+            <span className="text-[#00ffff]">X_X</span>
+            <span className="text-[#39ff14]">♥</span>
+          </div>
+          <p className="pixel-font text-[8px] text-gray-600">
+            more achievements loading... eventually...
+          </p>
         </div>
       </main>
     </div>
