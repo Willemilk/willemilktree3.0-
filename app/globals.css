@@ -24,6 +24,7 @@ body {
   color: var(--neon-cyan);
   font-family: 'Comic Sans MS', 'Arial', sans-serif;
   overflow-x: hidden;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size: 20px;"><text y="20">✨</text></svg>'), auto;
 }
 
 /* Rainbow gradient animation */
@@ -53,8 +54,8 @@ body {
 
 /* Glitter sparkle */
 @keyframes sparkle {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
 }
 
 /* Prefers reduced motion */
@@ -65,5 +66,9 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  body {
+    cursor: auto;
   }
 }
