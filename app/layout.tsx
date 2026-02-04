@@ -5,6 +5,7 @@ import Stars from "./_components/Stars";
 import Checkerboard from "./_components/Checkerboard";
 import SparkleCanvas from "./_components/SparkleCanvas";
 import MarqueeBar from "./_components/MarqueeBar";
+import MovingBackground from "./_components/MovingBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Willemilk ★ Hey I'm Willem",
-  description: "this is my linktree about me erm idunno tbh but just take a look ★ welcome 2 my profile XD",
+  title: "Willemilk",
+  description: "this is my linktree about me erm idunno tbh but just take a look",
 };
 
 export default function RootLayout({
@@ -35,6 +36,7 @@ export default function RootLayout({
         <div className="crt-overlay" />
 
         {/* Background layers */}
+        <MovingBackground />
         <Checkerboard />
         <Stars />
 
