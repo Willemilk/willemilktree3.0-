@@ -6,6 +6,8 @@ import Checkerboard from "./_components/Checkerboard";
 import SparkleCanvas from "./_components/SparkleCanvas";
 import MarqueeBar from "./_components/MarqueeBar";
 import MovingBackground from "./_components/MovingBackground";
+import GifBackground from "./_components/GifBackground";
+import BackgroundMusic from "./_components/BackgroundMusic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +38,7 @@ export default function RootLayout({
         <div className="crt-overlay" />
 
         {/* Background layers */}
+        <GifBackground />
         <MovingBackground />
         <Checkerboard />
         <Stars />
@@ -57,6 +60,9 @@ export default function RootLayout({
         <div className="relative z-20">
           <MarqueeBar />
         </div>
+
+        {/* Background music player */}
+        <BackgroundMusic />
       </body>
     </html>
   );
