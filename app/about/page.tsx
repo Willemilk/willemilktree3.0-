@@ -242,7 +242,7 @@ export default function About() {
 
           {/* Footer */}
           <motion.div
-            className="py-4"
+            className="py-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
