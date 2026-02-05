@@ -93,7 +93,7 @@ export default function Home() {
             className="text-center mb-10 mt-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text"
@@ -108,7 +108,7 @@ export default function Home() {
               className="text-base sm:text-lg text-gray-400 max-w-md mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
             >
               this is my linktree about me erm idunno tbh but just take a look
             </motion.p>
