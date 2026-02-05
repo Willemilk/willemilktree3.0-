@@ -1,41 +1,54 @@
 'use client';
 
-const bars = [3, 7, 5, 9, 4, 8, 6, 10, 3, 7, 5, 8, 4, 9, 6, 11];
+import { motion } from 'framer-motion';
+
+const bars = [3, 7, 5, 9, 4, 8, 6, 10, 3, 7, 5, 8];
 
 export default function NowPlaying() {
   return (
-    <div className="neon-box bg-black/70 p-4 rounded-lg max-w-xs w-full backdrop-blur-sm">
+    <motion.div
+      className="w-full p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
+      whileHover={{ borderColor: 'rgba(255, 16, 240, 0.15)' }}
+    >
       <div className="flex items-center gap-3">
-        <div className="w-14 h-14 bg-gradient-to-br from-[#ff10f0] via-[#00ffff] to-[#39ff14] rounded-lg animate-[spin-slow_4s_linear_infinite] flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(255,16,240,0.5)]">
+        <motion.div
+          className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff10f0]/20 via-[#00ffff]/20 to-[#39ff14]/20 flex items-center justify-center text-xl"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+        >
           ♪
-        </div>
+        </motion.div>
         <div className="flex-1 min-w-0">
-          <div className="pixel-font text-[8px] text-[#39ff14] mb-1 animate-[color-cycle_3s_linear_infinite]">
+          <div className="text-[10px] text-[#39ff14]/70 mb-0.5 font-medium tracking-wide">
             NOW PLAYING
           </div>
-          <div className="text-sm text-white font-bold truncate">
+          <div className="text-sm text-white font-medium truncate">
             something epic
           </div>
-          <div className="text-xs text-[#00ffff] truncate">
+          <div className="text-xs text-gray-500 truncate">
             probably geometry dash music
           </div>
         </div>
       </div>
+
       {/* Equalizer bars */}
-      <div className="flex gap-[3px] mt-3 justify-center items-end h-5">
+      <div className="flex gap-[3px] mt-3 justify-center items-end h-4">
         {bars.map((h, i) => (
-          <div
+          <motion.div
             key={i}
-            className="w-1.5 rounded-full"
-            style={{
-              height: `${h * 10}%`,
-              background: `linear-gradient(to top, #ff10f0, #00ffff)`,
-              animation: `float ${0.4 + (i % 4) * 0.15}s ease-in-out infinite`,
-              animationDelay: `${i * 0.08}s`,
+            className="w-1 rounded-full bg-gradient-to-t from-[#ff10f0]/60 to-[#00ffff]/60"
+            animate={{
+              height: [`${h * 8}%`, `${((h + 5) % 10 + 3) * 8}%`, `${h * 8}%`],
+            }}
+            transition={{
+              duration: 0.6,
+              repeat: Infinity,
+              delay: i * 0.05,
+              ease: 'easeInOut',
             }}
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
