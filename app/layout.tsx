@@ -8,6 +8,7 @@ import MarqueeBar from "./_components/MarqueeBar";
 import MovingBackground from "./_components/MovingBackground";
 import GifBackground from "./_components/GifBackground";
 import BackgroundMusic from "./_components/BackgroundMusic";
+import IntroAnimation from "./_components/IntroAnimation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Intro animation (shows once per session) */}
+        <IntroAnimation />
+
         {/* CRT scanline overlay */}
         <div className="crt-overlay" />
 
