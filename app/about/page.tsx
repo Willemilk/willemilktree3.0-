@@ -84,7 +84,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 gradient-text">
+            <h1 className="text-3xl sm:text-5xl md:text-5xl font-bold mb-3 gradient-text">
               About Me
             </h1>
             <div className="flex items-center justify-center gap-3">
@@ -124,7 +124,7 @@ export default function About() {
             >
               <p className="text-gray-500 text-sm mb-2">Actual footage of me cooking (probably):</p>
               <motion.div
-                className="text-4xl inline-block"
+                className="text-5xl inline-block"
                 animate={{ rotate: [0, -3, 3, -3, 0] }}
                 transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
               >
