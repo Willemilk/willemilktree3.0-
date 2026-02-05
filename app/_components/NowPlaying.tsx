@@ -12,7 +12,7 @@ export default function NowPlaying() {
     >
       <div className="flex items-center gap-3">
         <motion.div
-          className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff10f0]/20 via-[#00ffff]/20 to-[#39ff14]/20 flex items-center justify-center text-xl"
+          className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#ff10f0]/20 via-[#00ffff]/20 to-[#39ff14]/20 flex items-center justify-center text-xl"
           animate={{ rotate: 360 }}
           transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
         >
