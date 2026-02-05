@@ -124,7 +124,7 @@ export default function Home() {
               <motion.span
                 className="text-lg text-[#00ffff]"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
               >
                 ✦
               </motion.span>
@@ -255,7 +255,7 @@ export default function Home() {
               <motion.span
                 className="text-[#00ffff]/60"
                 animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
               >
                 ✦
               </motion.span>
