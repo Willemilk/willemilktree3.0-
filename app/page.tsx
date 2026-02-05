@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <PageTransition>
       <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 md:p-8">
-        <main className="w-full max-w-2xl flex flex-col items-center">
+        <main className="w-full max-w-xl flex flex-col items-center">
           {/* Header */}
           <motion.div
             className="text-center mb-10 mt-4"
