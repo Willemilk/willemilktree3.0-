@@ -245,7 +245,7 @@ export default function About() {
             className="py-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.6 }}
           >
             <div className="flex items-center justify-center gap-4 text-lg">
               <motion.span
