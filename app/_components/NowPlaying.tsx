@@ -7,7 +7,7 @@ const bars = [3, 7, 5, 9, 4, 8, 6, 10, 3, 7, 5, 8];
 export default function NowPlaying() {
   return (
     <motion.div
-      className="w-full p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
+      className="w-full p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
       whileHover={{ borderColor: 'rgba(255, 16, 240, 0.15)' }}
     >
       <div className="flex items-center gap-3">
