@@ -32,7 +32,7 @@ export default function NowPlaying() {
       </div>
 
       {/* Equalizer bars */}
-      <div className="flex gap-[3px] mt-3 justify-center items-end h-4">
+      <div className="flex gap-[3px] mt-3 justify-center items-end h-5">
         {bars.map((h, i) => (
           <motion.div
             key={i}
