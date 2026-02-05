@@ -202,7 +202,7 @@ body {
     transparent 50%,
     rgba(255, 16, 240, 0.01) 100%
   );
-  animation: scanline 10s linear infinite;
+  animation: scanline 12s linear infinite;
   pointer-events: none;
 }
 
