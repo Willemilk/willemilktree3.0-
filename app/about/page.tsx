@@ -52,7 +52,7 @@ export default function About() {
         <main className="w-full max-w-2xl flex flex-col items-center">
           {/* Navigation */}
           <motion.nav
-            className="flex gap-3 justify-center mb-8 flex-wrap"
+            className="flex gap-3 justify-center mb-10 flex-wrap"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -79,7 +79,7 @@ export default function About() {
 
           {/* Title */}
           <motion.div
-            className="text-center mb-8"
+            className="text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
