@@ -115,7 +115,7 @@ export default function Home() {
 
             {/* Divider */}
             <motion.div
-              className="mt-6 flex items-center justify-center gap-3"
+              className="mt-6 flex items-center justify-center gap-4"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -134,7 +134,7 @@ export default function Home() {
 
           {/* Navigation */}
           <motion.nav
-            className="flex gap-3 justify-center mb-8 flex-wrap"
+            className="flex gap-4 justify-center mb-8 flex-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -168,7 +168,7 @@ export default function Home() {
 
           {/* Social Links Grid */}
           <motion.div
-            className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8"
+            className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
