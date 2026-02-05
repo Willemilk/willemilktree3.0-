@@ -242,7 +242,7 @@ export default function Home() {
             className="py-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 1 }}
           >
             <div className="flex items-center justify-center gap-4 text-lg">
               <motion.span
