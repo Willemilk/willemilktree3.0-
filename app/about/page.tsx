@@ -166,7 +166,7 @@ export default function About() {
                     }}
                   />
                   <motion.div
-                    className="text-2xl mb-1 relative z-10"
+                    className="text-3xl mb-1 relative z-10"
                     animate={{ y: [0, -2, 0] }}
                     transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
                   >
