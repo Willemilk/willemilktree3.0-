@@ -9,7 +9,7 @@ export default function VisitorCounter() {
   useEffect(() => {
     const base = 50000;
     const daysSince = Math.floor((Date.now() - new Date('2024-01-01').getTime()) / 86400000);
-    setCount(base + daysSince * 7 + Math.floor(Math.random() * 5));
+    setCount(base + daysSince * 10 + Math.floor(Math.random() * 5));
   }, []);
 
   return (
