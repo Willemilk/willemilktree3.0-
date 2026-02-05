@@ -144,7 +144,7 @@ export default function About() {
               My Interests
             </h2>
             <motion.div
-              className="grid grid-cols-2 sm:grid-cols-4 gap-2.5"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -217,7 +217,7 @@ export default function About() {
                   </motion.span>
                   {category}
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {games.map((game, i) => (
                     <motion.div
                       key={game.name + game.year}
