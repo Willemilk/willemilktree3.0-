@@ -171,7 +171,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: rainbow 6s ease infinite;
+  animation: rainbow 8s ease infinite;
 }
 
 .text-glow {
