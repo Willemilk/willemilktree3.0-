@@ -15,7 +15,7 @@ export default function VisitorCounter() {
   return (
     <motion.div
       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.06]"
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ borderColor: 'rgba(57, 255, 20, 0.2)' }}
     >
