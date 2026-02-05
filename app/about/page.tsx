@@ -211,7 +211,7 @@ export default function About() {
                   <motion.span
                     className="text-[#fff700]"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
                   >
                     ⭐
                   </motion.span>
